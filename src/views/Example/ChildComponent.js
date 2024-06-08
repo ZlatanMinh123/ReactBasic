@@ -15,16 +15,17 @@ class ChildComponent extends React.Component {
         let { showJobs } = this.state;
         return (
             <>
-                {showJobs === false && (
+                {/* Điều kiện là đúng thì đoạn code sau dấu ? đc thực hiện
+                Sai thì đoạn code sau dấu : đc thực hiện
+             */}
+                {showJobs === false ? (
                     // Khi bấm vào nút Show thì biến showJobs sẽ thành true
                     <div>
                         <button onClick={() => this.handleShowHide()}>
                             Show
                         </button>
                     </div>
-                )}
-
-                {showJobs && (
+                ) : (
                     // Biến showJobs = true nên đoạn code bên dưới sẽ thực hiện,
                     // job-list sẽ được render ra.
                     <>
