@@ -13,6 +13,8 @@ class ChildComponent extends React.Component {
     render() {
         let { arrJobs } = this.props;
         let { showJobs } = this.state;
+        let check = showJobs === false ? 'showjobs: false' : 'showjobs: true';
+        console.log(check);
         return (
             <>
                 {/* Điều kiện là đúng thì đoạn code sau dấu ? đc thực hiện
