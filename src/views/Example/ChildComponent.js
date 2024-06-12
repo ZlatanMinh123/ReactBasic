@@ -1,4 +1,5 @@
 import React from "react";
+import "./Demo.scss";
 
 class ChildComponent extends React.Component {
     state = {
@@ -10,10 +11,15 @@ class ChildComponent extends React.Component {
             showJobs: !this.state.showJobs,
         });
     };
+
+    handleOnclickDelete = (job) => {
+        console.log("handleOnclickDelete: ", job);
+        this.props.deleteJob(job);
+    };
     render() {
         let { arrJobs } = this.props;
         let { showJobs } = this.state;
-        let check = showJobs === false ? 'showjobs: false' : 'showjobs: true';
+        let check = showJobs === false ? "showjobs: false" : "showjobs: true";
         console.log(check);
         return (
             <>
@@ -23,7 +29,10 @@ class ChildComponent extends React.Component {
                 {showJobs === false ? (
                     // Khi bấm vào nút Show thì biến showJobs sẽ thành true
                     <div>
-                        <button onClick={() => this.handleShowHide()}>
+                        <button
+                            className="btn-show"
+                            onClick={() => this.handleShowHide()}
+                        >
                             Show
                         </button>
                     </div>
@@ -35,7 +44,14 @@ class ChildComponent extends React.Component {
                             {arrJobs.map((item, index) => {
                                 return (
                                     <div key={item.id}>
-                                        {item.title} - {item.salary}
+                                        {item.title} - {item.salary}$ <></>
+                                        <span
+                                            onClick={() =>
+                                                this.handleOnclickDelete(item)
+                                            }
+                                        >
+                                            x
+                                        </span>
                                     </div>
                                 );
                             })}

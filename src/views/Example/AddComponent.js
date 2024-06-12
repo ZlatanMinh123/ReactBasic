@@ -18,6 +18,8 @@ class AddComponent extends React.Component {
         });
     };
 
+
+
     handleSubmit = (event) => {
         event.preventDefault();
         // Nếu this.state.title là 1 giá trị falsy (vd 1 chuỗi rỗng - do ta k nhập)
@@ -44,7 +46,7 @@ class AddComponent extends React.Component {
                     onChange={(event) => this.handleChangeTitleJob(event)}
                 />
                 <br />
-                <label htmlFor="lname">Salary:</label>
+                <label htmlFor="name">Salary:</label>
                 <br />
                 <input
                     type="text"
