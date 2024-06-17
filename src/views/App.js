@@ -9,6 +9,8 @@ import Nav from "./Nav/Nav.js";
 import Home from "./Example/Home.js";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
+import ListUser from "./Users/ListUser.js";
+
 function App() {
     return (
         <BrowserRouter>
@@ -25,6 +27,10 @@ function App() {
                         </Route>
                         <Route path="/about">
                             <MyComponent />
+                        </Route>
+
+                        <Route path="/user">
+                            <ListUser />
                         </Route>
                     </Switch>
                 </header>
