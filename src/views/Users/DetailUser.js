@@ -22,6 +22,7 @@ class DetailUser extends React.Component {
         this.props.history.push("/user");
     };
     render() {
+        console.log("check props: ", this.props);
         let { user } = this.state;
         let isEmptyObj = Object.keys(user).length === 0;
         return (
