@@ -36,7 +36,6 @@ function App() {
                         <Route path="/user/:id">
                             <DetailUser />
                         </Route>
-
                     </Switch>
                 </header>
 

@@ -4,9 +4,23 @@ import App from "./views/App";
 import "./styles/global.scss";
 import reportWebVitals from "./reportWebVitals";
 
+// ====== import REDUX ====
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from "./store/reducers/rootReducer";
+
+const reduxStore = createStore(
+    rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        {/*  <Provider> dùng để ép React khởi động cùng Redux
+            => 2 thằng chạy song song
+        */}
+        <Provider store={reduxStore}>
+            <App />
+        </Provider>
     </React.StrictMode>,
     document.getElementById("root")
 );
